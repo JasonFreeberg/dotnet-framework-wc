@@ -40,3 +40,11 @@ jobs:
       with:
         app-name: 'jefmarti-dotnetframework'
         images: 'jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }}'
+        
+    # Deploy a dacpac file to a provisioned SQL server
+    - name: Azure SQL Deploy
+      uses: Azure/sql-action@v1
+      with:
+        server-name: jefmartiserv.database.windows.net
+        connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+        dacpac-package: './data.dacpac'
