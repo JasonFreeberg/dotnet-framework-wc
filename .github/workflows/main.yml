@@ -27,3 +27,16 @@ jobs:
       run: |
         docker build -t jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }} dotnetwindowsapp/
         docker push jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }}
+        
+    # Authenticate a Service Principal to continuously deploy to your provisioned app service
+    - name: Azure Authentication
+      uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+    # Deploy your container to App Service
+    - name: Deploy Container to Azure App Service
+      uses: azure/webapps-deploy@releases/v2
+      with:
+        app-name: 'jefmarti-dotnetframework'
+        images: 'jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }}'
