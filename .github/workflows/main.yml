@@ -1,0 +1,25 @@
+name: Build and Deploy Windows Container App to Azure App Service
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy-to-dev:
+    runs-on: windows-latest
+    
+    steps:
+
+    # Use docker login to loginto ACR
+    - name: Docker login
+      uses: azure/docker-login@v1
+      with:
+        login-server: jefmartiregistry.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+        
+    # Build and push the image to Azure Container Registry
+    - run: |
+        docker build -t jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }} .
+        docker push jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }}
