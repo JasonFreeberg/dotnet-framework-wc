@@ -25,5 +25,5 @@ jobs:
     # Build and push the image to Azure Container Registry
     - name: Build and Push container to ACR
       run: |
-        docker build -t jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }} dotnetwindowsapp/dotnetwindowsapp/
+        docker build -t jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }} dotnetwindowsapp/
         docker push jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }}
