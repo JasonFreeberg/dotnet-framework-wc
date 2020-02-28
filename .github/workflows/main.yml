@@ -44,7 +44,7 @@ jobs:
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           
-    # Deploy your container to App Service *******************************
+    # Deploy your container to App Service ******************************
 #    - name: Deploy Container to Azure App Service
 #      uses: azure/webapps-deploy@releases/v2
 #      with:
