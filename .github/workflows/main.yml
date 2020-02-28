@@ -24,9 +24,9 @@ jobs:
     - name: Docker login to ACR
       uses: azure/docker-login@v1
       with:
-        login-server: https://index.docker.io/v1/jeffwmartinez/
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#        login-server: https://index.docker.io/v1/jeffwmartinez/
+        username: 'jeffwmartinez'
+        password: 'Phialpha1856'
         
     # Build and push the image to Azure Container Registry ****************
 #    - name: Build and Push container to ACR
