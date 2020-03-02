@@ -13,6 +13,12 @@ jobs:
       
     # Check out the repo to the app service VMs
     - uses: actions/checkout@v1
+    
+    # Authenticate a Service Principal to continuously deploy to your provisioned app service
+    - name: Azure Authentication
+      uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
                
     # Use docker login to log into ACR **********************************
 #    - name: Docker login to ACR
@@ -38,11 +44,6 @@ jobs:
         docker build -t jeffwmartinez/dotnetframeworkwc:${{ github.sha }} dotnetwindowsapp/dotnetwindowsapp/
         docker push jeffwmartinez/dotnetframeworkwc:${{ github.sha }}
         
-    # Authenticate a Service Principal to continuously deploy to your provisioned app service
-    - name: Azure Authentication
-      uses: azure/login@v1
-      with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
     # Deploy your container to App Service ******************************
 #    - name: Deploy Container to Azure App Service
