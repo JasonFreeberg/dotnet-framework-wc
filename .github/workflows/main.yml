@@ -34,7 +34,7 @@ jobs:
         username: 'jeffwmartinez'
         password: 'Phialpha1856'
         
-    # Build and push the image to Azure Container Registry ****************
+    # Build and push the image to Azure Container Registry ***************
 #    - name: Build and Push container to ACR
 #      run: |
 #        docker build -t jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }} dotnetwindowsapp/dotnetwindowsapp/
