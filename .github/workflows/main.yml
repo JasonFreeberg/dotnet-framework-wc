@@ -21,41 +21,41 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
                
     # Use docker login to log into ACR *********************************
-#    - name: Docker login to ACR
-#      uses: azure/docker-login@v1
-#      with:
-#        login-server: jefmartiregistry.azurecr.io
-#        username: ${{ secrets.REGISTRY_USERNAME }}
-#        password: ${{ secrets.REGISTRY_PASSWORD }}
     - name: Docker login to ACR
       uses: azure/docker-login@v1
       with:
+        login-server: jefmartiregistry.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+#    - name: Docker login to ACR
+#      uses: azure/docker-login@v1
+#      with:
 #        login-server: https://index.docker.io/v1/jeffwmartinez/
-        username: 'jeffwmartinez'
-        password: 'Phialpha1856'
+#        username: 'jeffwmartinez'
+#        password:  ${{ secrets.DOCKERHUB_PASSWORD }}
         
     # Build and push the image to Azure Container Registry ***************
-#    - name: Build and Push container to ACR
-#      run: |
-#        docker build -t jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }} dotnetwindowsapp/dotnetwindowsapp/
-#        docker push jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }}
-    - name: Build and Push container to Docker Hub
+    - name: Build and Push container to ACR
       run: |
-        docker build -t jeffwmartinez/dotnetframeworkwc:${{ github.sha }} dotnetwindowsapp/dotnetwindowsapp/
-        docker push jeffwmartinez/dotnetframeworkwc:${{ github.sha }}
+        docker build -t jefmartiregistry.azurecr.io/dotnetframeworkwc:${{ github.sha }} dotnetwindowsapp/dotnetwindowsapp/
+        docker push jefmartiregistry.azurecr.io/dotnetframeworkwc:${{ github.sha }}
+#    - name: Build and Push container to Docker Hub
+#      run: |
+#        docker build -t jeffwmartinez/dotnetframeworkwc:${{ github.sha }} dotnetwindowsapp/dotnetwindowsapp/
+#        docker push jeffwmartinez/dotnetframeworkwc:${{ github.sha }}
         
           
     # Deploy your container to App Service ******************************
+    - name: Deploy Container to Azure App Service
+      uses: azure/webapps-container-deploy@v1
+      with:
+        app-name: 'jefmarti-containertest'
+        images: 'jefmartiregistry.azurecr.io/dotnetframeworkwc:${{ github.sha }}'
 #    - name: Deploy Container to Azure App Service
 #      uses: azure/webapps-deploy@releases/v2
 #      with:
-#        app-name: 'jefmarti-dotnetframework'
-#        images: 'jefmartiregistry.azurecr.io/dotnetframework:${{ github.sha }}'
-    - name: Deploy Container to Azure App Service
-      uses: azure/webapps-deploy@releases/v2
-      with:
-        app-name: 'jefmarti-dotnet-fw-wc'
-        images: 'jeffwmartinez/dotnetframework:${{ github.sha }}'
+#        app-name: 'jefmarti-dotnet-fw-wc'
+#        images: 'jeffwmartinez/dotnetframework:${{ github.sha }}'
         
     # Deploy a dacpac file to a provisioned SQL server
     - name: Azure SQL Deploy
