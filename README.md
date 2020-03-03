@@ -1,7 +1,6 @@
 # dotnet-win-container
-Type: Containerized .NET Framework app deployed with GtiHub Actions!
-Azure Resource: jefmarti-dotnet-framework-wc-acr
-Deployment Status: Error -"403 Forbidden: Access is denied"
+Type: .NET Framework Windows Container deployed to ACR </br>
+Azure Resource: jefmarti-dotnet-framework-wc-acr </br>
+Deployment Status: Error -"403 Forbidden: Access is denied" </br>
 
-
-Note: Without using actions I get a 403.
+Note: Without using actions I get a 403. After using actions, I get a 502 Error "web server received an invalid response while acting as a gateway or proxy)
