@@ -1,6 +1,7 @@
 # dotnet-win-container
-Containerized .NET Framework app deployed with GtiHub Actions!
+Type: Containerized .NET Framework app deployed with GtiHub Actions!
+Azure Resource: jefmarti-dotnet-framework-wc-acr
+Deployment Status: Error -"403 Forbidden: Access is denied"
 
-Status: YELLOW - the actions work perfect, but the actual deployment of the framework application doesn't.  Might be a code issue
 
-Docker Status: RED - It deploys to dockerhub, but the App Service doesn't work properly
+Note: Without using actions I get a 403.
