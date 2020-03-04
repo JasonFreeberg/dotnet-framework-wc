@@ -10,7 +10,7 @@ WORKDIR /inetpub/wwwroot
 
 COPY ${source:-obj/Release} .
 # COPY ${source:-bin/Release/PublishOutput} .
-#COPY ${source:-.} . == COPY . .
+#COPY ${source:-.} . == COPY . . == COPY ${source:-ob/Release}
 
 # The following command doesn't work with Azure, but it works with Github Actions. . .How do I figure out what is getting copied over here?
 # COPY . .
