@@ -8,7 +8,7 @@ WORKDIR /inetpub/wwwroot
 
 # COPY copies files or directories from a source host filesystem to a destination
 
-COPY ${source:-obj/Docker/publish} .
+COPY ${source:-obj/Release} .
 # COPY ${source:-bin/Release/PublishOutput} .
 #COPY ${source:-.} . == COPY . . == COPY ${source:-ob/Release}
 
