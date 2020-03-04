@@ -5,7 +5,6 @@ FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 ARG source
 WORKDIR /inetpub/wwwroot
 
-
 # COPY copies files or directories from a source host filesystem to a destination
 
 #COPY ${source:-obj/Release} .
