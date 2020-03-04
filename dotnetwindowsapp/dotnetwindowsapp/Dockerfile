@@ -4,7 +4,8 @@
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 ARG source
 WORKDIR /inetpub/wwwroot
-COPY ${source:-obj/Docker/publish} .
+COPY ${source:-obj/Docker/release} .
+#COPY source/obj/Docker/publish .
 #COPY ./bin/Release/PublishOutput/ /inetpub/wwwroot
 
 # The following command doesn't work with Azure, but it works with Github Actions. . .How do I figure out what is getting copied over here?
