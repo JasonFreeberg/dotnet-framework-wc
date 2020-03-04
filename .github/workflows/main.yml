@@ -38,7 +38,7 @@ jobs:
     - name: Deploy Container to Azure App Service
       uses: azure/webapps-container-deploy@v1
       with:
-        app-name: 'jefmarti-dotnet-framework-wc-acr'
+        app-name: 'jefmarti-dotnet-framework-wc'
         images: 'jefmartiregistry.azurecr.io/dotnetframeworkwc:${{ github.sha }}'
         
     # Deploy a dacpac file to a provisioned SQL server
