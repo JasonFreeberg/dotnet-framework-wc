@@ -4,9 +4,12 @@
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 ARG source
 WORKDIR /inetpub/wwwroot
-COPY ${source} .
-#COPY source/obj/Docker/publish .
-#COPY ./bin/Release/PublishOutput/ /inetpub/wwwroot
+
+
+# COPY copies files or directories from a source host filesystem to a destination
+
+# COPY ${source:-obj/Docker/publish} .
+COPY ${source:-bin/Release/PublishOutput} .
 
 # The following command doesn't work with Azure, but it works with Github Actions. . .How do I figure out what is getting copied over here?
 # COPY . .
