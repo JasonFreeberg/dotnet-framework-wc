@@ -6,7 +6,7 @@ ARG source
 WORKDIR /inetpub/wwwroot
 
 
-# COPY copies files or directories from a source host filesystem to a destination
+# COPY copies files or directories from a source host filesystem to a destinationn
 
 COPY ${source:-obj/Release} .
 # COPY ${source:-bin/Release/PublishOutput} .
