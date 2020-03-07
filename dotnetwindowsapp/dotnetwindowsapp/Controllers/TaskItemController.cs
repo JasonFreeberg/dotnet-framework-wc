@@ -1,125 +1,117 @@
-﻿using dotnetwindowsapp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using dotnetwindowsapp.Models;
 
 namespace dotnetwindowsapp.Controllers
 {
+    
     public class TaskItemController : Controller
     {
         private AppDbContext db = new AppDbContext();
 
-        // GET: Todos
+        // GET: TaskItem
         public ActionResult Index()
         {
-            Trace.WriteLine("GET /Todos/Index");
             return View(db.Tasks.ToList());
         }
 
-        // GET: Todos/Details/5
+        // GET: TaskItem/Details/5
         public ActionResult Details(int? id)
         {
-            Trace.WriteLine("GET /Todos/Details/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskItem todo = db.Tasks.Find(id);
-            if (todo == null)
+            TaskItem taskItem = db.Tasks.Find(id);
+            if (taskItem == null)
             {
                 return HttpNotFound();
             }
-            return View(todo);
+            return View(taskItem);
         }
 
-        // GET: Todos/Create
+        // GET: TaskItem/Create
         public ActionResult Create()
         {
-            Trace.WriteLine("GET /Todos/Create");
-            //return View(new TaskItem { CreatedDate = DateTime.Now });
             return View();
         }
 
-        // POST: Todos/Create
+        // POST: TaskItem/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Description,CreatedDate")] TaskItem todo)
+        public ActionResult Create([Bind(Include = "Title,Description")] TaskItem taskItem)
         {
-            Trace.WriteLine("POST /Todos/Create");
             if (ModelState.IsValid)
             {
-                db.Tasks.Add(todo);
+                db.Tasks.Add(taskItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(todo);
+            return View(taskItem);
         }
 
-        // GET: Todos/Edit/5
+        // GET: TaskItem/Edit/5
         public ActionResult Edit(int? id)
         {
-            Trace.WriteLine("GET /Todos/Edit/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskItem todo = db.Tasks.Find(id);
-            if (todo == null)
+            TaskItem taskItem = db.Tasks.Find(id);
+            if (taskItem == null)
             {
                 return HttpNotFound();
             }
-            return View(todo);
+            return View(taskItem);
         }
 
-        // POST: Todos/Edit/5
+        // POST: TaskItem/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Description,CreatedDate")] TaskItem todo)
+        public ActionResult Edit([Bind(Include = "Title,Description")] TaskItem taskItem)
         {
-            Trace.WriteLine("POST /Todos/Edit/" + todo.ID);
             if (ModelState.IsValid)
             {
-                db.Entry(todo).State = EntityState.Modified;
+                db.Entry(taskItem).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(todo);
+            return View(taskItem);
         }
 
-        // GET: Todos/Delete/5
+        // GET: TaskItem/Delete/5
         public ActionResult Delete(int? id)
         {
-            Trace.WriteLine("GET /Todos/Delete/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskItem todo = db.Tasks.Find(id);
-            if (todo == null)
+            TaskItem taskItem = db.Tasks.Find(id);
+            if (taskItem == null)
             {
                 return HttpNotFound();
             }
-            return View(todo);
+            return View(taskItem);
         }
 
-        // POST: Todos/Delete/5
+        // POST: TaskItem/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Trace.WriteLine("POST /Todos/Delete/" + id);
-            TaskItem todo = db.Tasks.Find(id);
-            db.Tasks.Remove(todo);
+            TaskItem taskItem = db.Tasks.Find(id);
+            db.Tasks.Remove(taskItem);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
