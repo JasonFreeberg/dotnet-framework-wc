@@ -133,7 +133,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TaskItemController.cs" />
+    <Compile Include="Controllers\TaskItemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -288,6 +288,11 @@
     <Content Include="Views\TaskItem\Details.cshtml" />
     <Content Include="Views\TaskItem\Edit.cshtml" />
     <Content Include="Views\TaskItem\Index.cshtml" />
+    <Content Include="Views\TaskItems\Create.cshtml" />
+    <Content Include="Views\TaskItems\Delete.cshtml" />
+    <Content Include="Views\TaskItems\Details.cshtml" />
+    <Content Include="Views\TaskItems\Edit.cshtml" />
+    <Content Include="Views\TaskItems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

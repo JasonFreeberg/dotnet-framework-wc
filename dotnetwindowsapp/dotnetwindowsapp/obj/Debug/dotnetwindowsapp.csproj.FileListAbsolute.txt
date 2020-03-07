@@ -79,3 +79,4 @@ C:\Users\jefmarti\source\repos\dotnet-framework-wc\dotnetwindowsapp\dotnetwindow
 C:\Users\jefmarti\source\repos\dotnet-framework-wc\dotnetwindowsapp\dotnetwindowsapp\obj\Debug\dotnetwindowsapp.csproj.CopyComplete
 C:\Users\jefmarti\source\repos\dotnet-framework-wc\dotnetwindowsapp\dotnetwindowsapp\obj\Debug\dotnetwindowsapp.dll
 C:\Users\jefmarti\source\repos\dotnet-framework-wc\dotnetwindowsapp\dotnetwindowsapp\obj\Debug\dotnetwindowsapp.pdb
+C:\Users\jefmarti\source\repos\dotnet-framework-wc\dotnetwindowsapp\dotnetwindowsapp\obj\Debug\dotnetwindowsapp.csprojAssemblyReference.cache

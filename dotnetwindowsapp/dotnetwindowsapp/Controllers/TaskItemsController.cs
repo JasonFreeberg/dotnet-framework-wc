@@ -10,18 +10,17 @@ using dotnetwindowsapp.Models;
 
 namespace dotnetwindowsapp.Controllers
 {
-    
-    public class TaskItemController : Controller
+    public class TaskItemsController : Controller
     {
         private AppDbContext db = new AppDbContext();
 
-        // GET: TaskItem
+        // GET: TaskItems
         public ActionResult Index()
         {
             return View(db.Tasks.ToList());
         }
 
-        // GET: TaskItem/Details/5
+        // GET: TaskItems/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,18 +35,18 @@ namespace dotnetwindowsapp.Controllers
             return View(taskItem);
         }
 
-        // GET: TaskItem/Create
+        // GET: TaskItems/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: TaskItem/Create
+        // POST: TaskItems/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Title,Description")] TaskItem taskItem)
+        public ActionResult Create([Bind(Include = "ID,Title,Description")] TaskItem taskItem)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +58,7 @@ namespace dotnetwindowsapp.Controllers
             return View(taskItem);
         }
 
-        // GET: TaskItem/Edit/5
+        // GET: TaskItems/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,12 +73,12 @@ namespace dotnetwindowsapp.Controllers
             return View(taskItem);
         }
 
-        // POST: TaskItem/Edit/5
+        // POST: TaskItems/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Title,Description")] TaskItem taskItem)
+        public ActionResult Edit([Bind(Include = "ID,Title,Description")] TaskItem taskItem)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +89,7 @@ namespace dotnetwindowsapp.Controllers
             return View(taskItem);
         }
 
-        // GET: TaskItem/Delete/5
+        // GET: TaskItems/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +104,7 @@ namespace dotnetwindowsapp.Controllers
             return View(taskItem);
         }
 
-        // POST: TaskItem/Delete/5
+        // POST: TaskItems/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
