@@ -283,11 +283,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\TaskItem\Create.cshtml" />
-    <Content Include="Views\TaskItem\Delete.cshtml" />
-    <Content Include="Views\TaskItem\Details.cshtml" />
-    <Content Include="Views\TaskItem\Edit.cshtml" />
-    <Content Include="Views\TaskItem\Index.cshtml" />
     <Content Include="Views\TaskItems\Create.cshtml" />
     <Content Include="Views\TaskItems\Delete.cshtml" />
     <Content Include="Views\TaskItems\Details.cshtml" />
