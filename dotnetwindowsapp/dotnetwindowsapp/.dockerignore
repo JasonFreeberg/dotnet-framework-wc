@@ -1,8 +1,13 @@
 *
-!\inetpub\wwwroot
+!/inetpub/wwwroot/
+!obj\Docker\publish\
+!obj\Docker\empty\
 
-#!obj\Docker\publish\
-#!obj\Docker\empty\
+.git
+.cache
 
 #after all the testing. . .there is afile/path that is getting ignored.  The quick fix is to comment out the star above.  The real fix is to add another exception. 
+
+# this ignore file helps you define the build context that you really need.  The right exception allows certain files and folders that will be included in the build context to be packed and uploaded to the docker server.
+# docker is a client-server tool
 
