@@ -1,5 +1,5 @@
-*
-!/inetpub/wwwroot/
+#*
+!/inetpub/wwwroot
 !obj\Docker\publish\
 !obj\Docker\empty\
 
