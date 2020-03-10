@@ -1,6 +1,8 @@
-#*
-!obj\Docker\publish\
-!obj\Docker\empty\
+*
+!obj\Docker
+
+#!obj\Docker\publish\
+#!obj\Docker\empty\
 
 #after all the testing. . .there is afile/path that is getting ignored.  The quick fix is to comment out the star above.  The real fix is to add another exception. 
 
