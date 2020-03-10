@@ -7,4 +7,4 @@ EXPOSE 80
 
 WORKDIR /inetpub/wwwroot
 COPY ${source} .
-#COPY ${source:-bin/docker/publish} .
+#COPY ${source:-obj/Docker/publish} .
