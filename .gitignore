@@ -13,7 +13,7 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
- Build results
+# Build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -43,9 +43,6 @@ Generated\ Files/
 *.VisualState.xml
 TestResult.xml
 
-
-
-#___________________________________________________Testing Below Section [PASSED]
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
@@ -94,7 +91,6 @@ StyleCopReport.xml
 # Chutzpah Test files
 _Chutzpah*
 
-#_______________________________________________________Testing PASSED
 # Visual C++ cache files
 ipch/
 *.aps
@@ -168,9 +164,6 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
-
-
-#______________________________________Everything Below This Line is OK________________
 # Click-Once directory
 publish/
 
@@ -193,10 +186,8 @@ PublishScripts/
 **/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
-
-
 # Uncomment if necessary however generally it will be regenerated when needed
-!**/[Pp]ackages/repositories.config
+#!**/[Pp]ackages/repositories.config
 # NuGet v3's project.json files produces more ignorable files
 *.nuget.props
 *.nuget.targets
@@ -235,11 +226,11 @@ orleans.codegen.cs
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
-*.snk
+#*.snk
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components
 # (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
-bower_components/
+#bower_components/
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -311,10 +302,9 @@ paket-files/
 __pycache__/
 *.pyc
 
-#TEST
 # Cake - Uncomment if you are using it
-tools/**
-!tools/packages.config
+# tools/**
+# !tools/packages.config
 
 # Tabs Studio
 *.tss
