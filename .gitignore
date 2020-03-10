@@ -43,55 +43,58 @@ Generated\ Files/
 #*.VisualState.xml
 #TestResult.xml
 
+
+
+#___________________________________________________Testing Below Section
 # Build Results of an ATL Project
-#[Dd]ebugPS/
-#[Rr]eleasePS/
-#dlldata.c
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
 
 # Benchmark Results
-#BenchmarkDotNet.Artifacts/
+BenchmarkDotNet.Artifacts/
 
 # .NET Core
-#project.lock.json
-#project.fragment.lock.json
-#artifacts/
+project.lock.json
+project.fragment.lock.json
+artifacts/
 
 # StyleCop
-#StyleCopReport.xml
+StyleCopReport.xml
 
 # Files built by Visual Studio
-#*_i.c
-#*_p.c
-#*_h.h
-#*.ilk
-#*.meta
-#*.obj
-#*.iobj
-#*.pch
-#*.pdb
-#*.ipdb
-#*.pgc
-#*.pgd
-#*.rsp
-#*.sbr
-#*.tlb
-#*.tli
-#*.tlh
-#*.tmp
-#*.tmp_proj
-#*_wpftmp.csproj
-#*.log
-#*.vspscc
-#*.vssscc
-#.builds
-#*.pidb
-#*.svclog
-#*.scc
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
 
 # Chutzpah Test files
-#_Chutzpah*
+_Chutzpah*
 
-#_______________________________________________________Testing below section
+#_______________________________________________________Testing PASSED
 # Visual C++ cache files
 ipch/
 *.aps
