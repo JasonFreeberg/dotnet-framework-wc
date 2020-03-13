@@ -1,6 +1,10 @@
-# dotnet-win-container
-Type: .NET Framework Windows Container deployed to ACR </br>
-Azure Resource: jefmarti-dotnet-framework-wc-acr </br>
+# dotnet-framework-wc
+Type: .NET Framework Windows Container</br>
+Actions: ACR, Azure App Service, Azure SQLs </br>
+Azure Resource: jefmarti-dotnet-framework-wc </br>
 Deployment Status: Error -"403 Forbidden: Access is denied" </br>
 
-Note: Without using actions I get a 403. After using actions, I get a 502 Error "web server received an invalid response while acting as a gateway or proxy)
+Inconsistent behavior when deploying with actions
+- Actions will not consistantly pass with current dockerfile settings </br> </br>
+
+App will work when published directly to ACR from Visual Studio
