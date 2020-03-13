@@ -161,8 +161,6 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
-    <None Include="Properties\PublishProfiles\jefmartireg.pubxml" />
-    <None Include="Properties\PublishProfiles\jefmartireg1.pubxml" />
     <None Include="Properties\PublishProfiles\jefmartiregistry.pubxml" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

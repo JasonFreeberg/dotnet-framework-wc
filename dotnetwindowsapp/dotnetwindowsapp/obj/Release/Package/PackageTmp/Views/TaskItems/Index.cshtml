@@ -4,36 +4,39 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+    <div class="text-center">
+        <h1 class="display-4">My Tasks</h1>
+    </div>
+<hr />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-borderless">
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
         </td>
+    </tr>
+    <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+    </tr>
+    <tr>
+     
+        <td class="text-right">
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) -
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) -
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <hr />
         </td>
     </tr>
 }
 
 </table>
+<div class="text-right text-dark">
+    <button class="btn btn-outline-dark">@Html.ActionLink("Create New Task", "Create", new { @class = "nav-link" })</button>
+</div>
+
+   
+
